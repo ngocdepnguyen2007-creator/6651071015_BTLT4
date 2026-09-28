@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Thực đơn quán cà phê The Cozy Bean">
+    <title>The Cozy Bean - Menu</title>
+    <!-- <link rel="stylesheet" href="../css/style.css"> -->
+    <style>
+        /* 1. Selector Universal (*) */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        /* 2. Selector Tag (body) */
+        body { font-family: sans-serif; background-color: #fdfbf7; }
+
+        /* 3. Selector ID (#main-header) */
+        #main-header {
+            text-align: center; padding: 60px 20px; color: white;
+            /* CSS3: Multiple backgrounds, background-size, background-position */
+            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1497935586351-b67a49e012bf?auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+
+        #main-header img { width: 80px; border-radius: 50%; }
+
+        /* 4. Selector Descendant (nav ul) */
+        nav ul { list-style: none; background-color: #5c3a21; display: flex; justify-content: center; padding: 15px; }
+        
+        /* 5. Selector Child (nav > ul > li) */
+        nav > ul > li { margin: 0 20px; }
+        nav a { text-decoration: none; color: white; font-weight: bold; }
+
+        /* 6. Selector Pseudo-class (:hover) */
+        nav a:hover { color: #f1c40f; }
+
+        .container { display: flex; max-width: 1200px; margin: 30px auto; gap: 30px; padding: 0 20px; }
+        .main-content { flex: 3; }
+        aside { flex: 1; }
+
+        section { margin-bottom: 50px; }
+        section h2 { color: #5c3a21; border-bottom: 2px solid #5c3a21; padding-bottom: 10px; margin-bottom: 20px; }
+
+        .menu-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 20px; }
+
+        /* CSS3: border-radius và box-shadow cho card món ăn */
+        article {
+            background: white; padding: 15px; text-align: center;
+            border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        /* CSS3: border-radius cho ảnh món ăn */
+        article img { width: 100%; height: 180px; object-fit: cover; border-radius: 8px; margin-bottom: 15px; }
+        
+        /* Selector Class (.price) */
+        .price { display: block; font-weight: bold; color: #d35400; margin: 10px 0; }
+        button { background-color: #d35400; color: white; border: none; padding: 10px 20px; border-radius: 20px; cursor: pointer; }
+
+        /* CSS3: border-image cho khối Khuyến mãi ở ASIDE */
+        .promo-box {
+            padding: 20px; background-color: #fff; text-align: center;
+            border: 10px solid transparent;
+            border-image: url('https://placehold.co/100x100/d35400/white?text=Border') 30 stretch;
+        }
+
+        /* CSS3: background-clip và background-origin cho footer */
+        footer {
+            background-color: #2c1e16; color: white; text-align: center; padding: 30px 20px;
+            border: 5px dashed #5c3a21;
+            background-clip: padding-box;
+            background-origin: border-box;
+        }
+    </style>
+</head>
+<body>
+    <header id="main-header">
+        <img src="https://placehold.co/80x80/5c3a21/white?text=Bean" alt="Logo">
+        <h1>THE COZY BEAN</h1>
+        <p>Tận hưởng từng phút giây lắng đọng cùng tách cà phê đậm đà</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#">Trang chủ</a></li>
+            <li><a href="#">Thực đơn</a></li>
+            <li><a href="#">Khuyến mãi</a></li>
+            <li><a href="#">Liên hệ</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="main-content">
+            <!-- YÊU CẦU: Nhiều thẻ SECTION tương ứng với nhóm món -->
+            <section id="drinks">
+                <h2>Cà Phê & Thức Uống</h2>
+                <div class="menu-grid">
+                    <article>
+                        <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=400" alt="Cà Phê">
+                        <h3>Cà Phê Đen Đá</h3>
+                        <p>Đậm đà hương vị truyền thống.</p>
+                        <span class="price">25.000đ</span>
+                        <button>Đặt món</button>
+                    </article>
+                    <article>
+                        <img src="https://images.unsplash.com/photo-1541167760496-1628856ab772?w=400" alt="Latte">
+                        <h3>Latte Nóng</h3>
+                        <p>Espresso kết hợp sữa nóng.</p>
+                        <span class="price">45.000đ</span>
+                        <button>Đặt món</button>
+                    </article>
+                </div>
+            </section>
+
+            <section id="dessert">
+                <h2>Bánh Ngọt & Tráng Miệng</h2>
+                <div class="menu-grid">
+                    <article>
+                        <img src="https://images.unsplash.com/photo-1571115177098-24ec42ed204d?w=400" alt="Tiramisu">
+                        <h3>Bánh Tiramisu</h3>
+                        <p>Vị mềm mịn, thơm mùi cà phê.</p>
+                        <span class="price">35.000đ</span>
+                        <button>Đặt món</button>
+                    </article>
+                </div>
+            </section>
+        </div>
+
+        <aside>
+            <div class="promo-box">
+                <h2>Món Yêu Thích</h2>
+                <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400" alt="Trà Đào" style="width:100%; border-radius: 8px;">
+                <h3>Trà Đào Cam Sả</h3>
+                <p>Giảm 20% hôm nay.</p>
+            </div>
+        </aside>
+    </div>
+
+    <footer>
+        <p>Giờ mở cửa: 07:00 - 22:00 | Hotline: 0123 456 789</p>
+        <p>&copy; 2023 The Cozy Bean. All rights reserved.</p>
+    </footer>
+</body>
+</html>

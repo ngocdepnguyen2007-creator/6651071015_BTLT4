@@ -1,0 +1,115 @@
+
+
+/* 1. CSS3: Selector & Reset */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #333; line-height: 1.6; background-color: #fafafa; }
+
+/* HEADER DÍNH (Sticky Navigation) */
+header {
+    position: sticky; top: 0; background-color: rgba(255, 255, 255, 0.95);
+    /* 2. CSS3: Border & Background (box-shadow tạo đổ bóng) */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    display: flex; justify-content: space-between; align-items: center; padding: 15px 50px; z-index: 1000;
+}
+.logo { font-size: 1.5em; font-weight: 800; color: #d35400; letter-spacing: 1px; }
+nav ul { display: flex; list-style: none; gap: 25px; }
+nav a { text-decoration: none; color: #333; font-weight: 500; font-size: 0.95em; }
+
+/* 3. CSS3: Transitions & Animations (Hiệu ứng chuyển màu mượt mà) */
+nav a:hover { color: #d35400; transition: color 0.3s ease; }
+
+/* HERO SECTION */
+.hero {
+    min-height: 85vh; display: flex; align-items: center; justify-content: center; text-align: center;
+    /* CSS3: Multiple Backgrounds (Gradient màu nền) */
+    background: linear-gradient(135deg, #fdfbf7 0%, #f3e8e0 100%);
+    padding: 20px;
+}
+.hero-content img { 
+    width: 160px; height: 160px; object-fit: cover; 
+    /* CSS3: Border-radius bo tròn ảnh chân dung */
+    border-radius: 50%; 
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1); border: 4px solid #fff;
+}
+.hero h1 { font-size: 2.8em; margin: 20px 0 10px; color: #2c3e50; }
+.hero p { font-size: 1.2em; color: #555; margin-bottom: 25px; max-width: 600px; margin-left: auto; margin-right: auto; }
+
+.cta-btn {
+    display: inline-block; padding: 12px 30px; background: #d35400; color: white; 
+    border-radius: 30px; text-decoration: none; font-weight: bold; margin: 10px;
+    /* 4. CSS3: 2D/3D Transform & Transitions (Nút bấm nảy lên khi hover) */
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 4px 6px rgba(211, 84, 0, 0.2);
+}
+.cta-btn:hover { transform: translateY(-3px) scale(1.02); background: #e67e22; box-shadow: 0 6px 12px rgba(211, 84, 0, 0.3); }
+.cta-btn.outline { background: transparent; border: 2px solid #d35400; color: #d35400; }
+.cta-btn.outline:hover { background: #d35400; color: white; }
+
+section { padding: 80px 10%; }
+section h2 { text-align: center; margin-bottom: 50px; font-size: 2.2em; color: #2c3e50; position: relative; }
+section h2::after {
+    content: ''; display: block; width: 60px; height: 3px; background: #d35400;
+    margin: 15px auto 0; border-radius: 2px;
+}
+
+/* SECTION GIỚI THIỆU */
+.about-text { font-size: 1.1em; text-align: center; max-width: 800px; margin: 0 auto; }
+/* 5. CSS3: Text Effects (text-shadow tạo bóng chữ) */
+.highlight-text { color: #d35400; font-weight: bold; text-shadow: 0px 1px 1px rgba(0,0,0,0.05); }
+
+/* SECTION KỸ NĂNG */
+.skills { text-align: center; background: #fff; }
+.skill-badge {
+    display: inline-block; padding: 10px 25px; margin: 8px; background: #f4f6f7; 
+    border-radius: 25px; font-weight: 600; color: #2c3e50; border: 1px solid #e1e8ed;
+    transition: all 0.3s ease;
+}
+.skill-badge:hover { transform: translateY(-3px); background: #2c3e50; color: white; border-color: #2c3e50; }
+
+/* 6. CSS3: User Interface (Sử dụng Flexbox để bố cục dòng thời gian) */
+.timeline { 
+    display: flex; flex-direction: column; gap: 30px; 
+    border-left: 3px solid #d35400; padding-left: 30px; margin-left: 20px; max-width: 800px; margin: 0 auto;
+}
+.timeline-item { position: relative; }
+.timeline-item::before {
+    content: ''; position: absolute; left: -38px; top: 5px; width: 14px; height: 14px;
+    background: #fff; border: 3px solid #d35400; border-radius: 50%;
+}
+.timeline-item h3 { color: #d35400; margin-bottom: 5px; font-size: 1.3em; }
+
+/* SECTION DỰ ÁN */
+/* 7. CSS3: Multiple Columns / Grid (Chia cột responsive cho dự án) */
+.projects-grid { 
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; 
+}
+.project-card {
+    background: white; border-radius: 12px; overflow: hidden;
+    border: 1px solid #eee;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.project-card:hover { transform: translateY(-8px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+.project-card img { width: 100%; height: 200px; object-fit: cover; }
+.project-info { padding: 25px; }
+.project-info h3 { margin-bottom: 10px; color: #2c3e50; }
+
+/* SECTION BÀI VIẾT & ASIDE */
+.blog-container { display: flex; gap: 40px; flex-wrap: wrap; }
+.blog-main { flex: 3; min-width: 300px; }
+.blog-aside { flex: 1; min-width: 250px; padding: 25px; background: #fff; border-radius: 12px; border: 1px solid #eee; height: fit-content; }
+.blog-post { margin-bottom: 30px; padding-bottom: 30px; border-bottom: 1px solid #eee; }
+.blog-post h3 { font-size: 1.4em; margin-bottom: 10px; color: #2c3e50; }
+.blog-post .date { color: #888; font-size: 0.9em; margin-bottom: 15px; display: block; }
+
+.blog-aside h3 { margin-bottom: 15px; color: #2c3e50; font-size: 1.2em; border-bottom: 2px solid #f4f6f7; padding-bottom: 10px; }
+.blog-aside ul { list-style: none; }
+.blog-aside li { margin-bottom: 12px; }
+.blog-aside a { text-decoration: none; color: #d35400; transition: color 0.2s; }
+.blog-aside a:hover { color: #2c3e50; }
+
+/* FOOTER */
+footer { background: #2c3e50; color: #ecf0f1; text-align: center; padding: 40px 20px; }
+footer a { color: #d35400; text-decoration: none; margin: 0 10px; font-weight: bold; }
+.back-to-top { display: inline-block; margin-top: 20px; padding: 10px 25px; background: #34495e; color: white; border-radius: 20px; transition: background 0.3s; }
+.back-to-top:hover { background: #d35400; color: white; }

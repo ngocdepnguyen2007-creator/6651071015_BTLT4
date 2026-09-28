@@ -1,0 +1,381 @@
+/* =========================================
+   1. CSS VARIABLES (Biến CSS)
+========================================= */
+:root {
+    --primary-color: #d35400;
+    --primary-hover: #e67e22;
+    --text-main: #333;
+    --text-muted: #555;
+    --text-light: #888;
+    --bg-main: #fafafa;
+    --bg-white: #ffffff;
+    --border-color: #eee;
+    --font-primary: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 15px rgba(0, 0, 0, 0.05);
+    --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+/* =========================================
+   2. RESET & BASE STYLES
+========================================= */
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
+
+html {
+    scroll-behavior: smooth; /* Cuộn trang mượt mà */
+}
+
+body { 
+    font-family: var(--font-primary); 
+    color: var(--text-main); 
+    line-height: 1.6; 
+    background-color: var(--bg-main); 
+}
+
+section { 
+    padding: 80px 10%; 
+}
+
+section h2 { 
+    text-align: center; 
+    margin-bottom: 50px; 
+    font-size: 2.2em; 
+    color: #2c3e50; 
+    position: relative; 
+}
+
+section h2::after {
+    content: ''; 
+    display: block; 
+    width: 60px; 
+    height: 3px; 
+    background: var(--primary-color);
+    margin: 15px auto 0; 
+    border-radius: 2px;
+}
+
+/* =========================================
+   3. HEADER & NAVIGATION
+========================================= */
+header {
+    position: sticky; 
+    top: 0; 
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: var(--shadow-sm);
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 15px 50px; 
+    z-index: 1000;
+}
+
+.logo { 
+    font-size: 1.5em; 
+    font-weight: 800; 
+    color: var(--primary-color); 
+    letter-spacing: 1px; 
+}
+
+nav ul { 
+    display: flex; 
+    list-style: none; 
+    gap: 25px; 
+}
+
+nav a { 
+    text-decoration: none; 
+    color: var(--text-main); 
+    font-weight: 500; 
+    font-size: 0.95em; 
+    transition: var(--transition);
+}
+
+nav a:hover { 
+    color: var(--primary-color); 
+}
+
+/* =========================================
+   4. HERO SECTION
+========================================= */
+.hero {
+    min-height: 85vh; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    text-align: center;
+    background: linear-gradient(135deg, #fdfbf7 0%, #f3e8e0 100%);
+    padding: 20px;
+}
+
+.hero-content img { 
+    width: 160px; 
+    height: 160px; 
+    object-fit: cover; 
+    border-radius: 50%; 
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1); 
+    border: 4px solid var(--bg-white);
+}
+
+.hero h1 { 
+    font-size: 2.8em; 
+    margin: 20px 0 10px; 
+    color: #2c3e50; 
+}
+
+.hero p { 
+    font-size: 1.2em; 
+    color: var(--text-muted); 
+    margin-bottom: 25px; 
+    max-width: 600px; 
+    margin-left: auto; 
+    margin-right: auto; 
+}
+
+.cta-btn {
+    display: inline-block; 
+    padding: 12px 30px; 
+    background: var(--primary-color); 
+    color: white; 
+    border-radius: 30px; 
+    text-decoration: none; 
+    font-weight: bold; 
+    margin: 10px;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 4px 6px rgba(211, 84, 0, 0.2);
+}
+
+.cta-btn:hover { 
+    transform: translateY(-3px) scale(1.02); 
+    background: var(--primary-hover); 
+    box-shadow: 0 6px 12px rgba(211, 84, 0, 0.3); 
+}
+
+.cta-btn.outline { 
+    background: transparent; 
+    border: 2px solid var(--primary-color); 
+    color: var(--primary-color); 
+}
+
+.cta-btn.outline:hover { 
+    background: var(--primary-color); 
+    color: white; 
+}
+
+/* =========================================
+   5. ABOUT & SKILLS
+========================================= */
+.about-text { 
+    font-size: 1.1em; 
+    text-align: center; 
+    max-width: 800px; 
+    margin: 0 auto; 
+}
+
+.highlight-text { 
+    color: var(--primary-color); 
+    font-weight: bold; 
+    text-shadow: 0px 1px 1px rgba(0,0,0,0.05); 
+}
+
+.skills { 
+    text-align: center; 
+    background: var(--bg-white); 
+}
+
+.skill-badge {
+    display: inline-block; 
+    padding: 10px 25px; 
+    margin: 8px; 
+    background: #f4f6f7; 
+    border-radius: 25px; 
+    font-weight: 600; 
+    color: #2c3e50; 
+    border: 1px solid #e1e8ed;
+    transition: var(--transition);
+}
+
+.skill-badge:hover { 
+    transform: translateY(-3px); 
+    background: #2c3e50; 
+    color: white; 
+    border-color: #2c3e50; 
+}
+
+/* =========================================
+   6. TIMELINE (HÀNH TRÌNH)
+========================================= */
+.timeline { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 30px; 
+    border-left: 3px solid var(--primary-color); 
+    padding-left: 30px; 
+    margin-left: 20px; 
+    max-width: 800px; 
+    margin: 0 auto;
+}
+
+.timeline-item { position: relative; }
+
+.timeline-item::before {
+    content: ''; 
+    position: absolute; 
+    left: -38px; 
+    top: 5px; 
+    width: 14px; 
+    height: 14px;
+    background: var(--bg-white); 
+    border: 3px solid var(--primary-color); 
+    border-radius: 50%;
+}
+
+.timeline-item h3 { 
+    color: var(--primary-color); 
+    margin-bottom: 5px; 
+    font-size: 1.3em; 
+}
+
+/* =========================================
+   7. PROJECTS GRID
+========================================= */
+.projects-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 30px; 
+}
+
+.project-card {
+    background: var(--bg-white); 
+    border-radius: 12px; 
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-md);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover { 
+    transform: translateY(-8px); 
+    box-shadow: var(--shadow-lg); 
+}
+
+.project-card img { 
+    width: 100%; 
+    height: 200px; 
+    object-fit: cover; 
+}
+
+.project-info { padding: 25px; }
+
+.project-info h3 { 
+    margin-bottom: 10px; 
+    color: #2c3e50; 
+}
+
+/* =========================================
+   8. BLOG SECTION
+========================================= */
+.blog-container { 
+    display: flex; 
+    gap: 40px; 
+    flex-wrap: wrap; 
+}
+
+.blog-main { 
+    flex: 3; 
+    min-width: 300px; 
+}
+
+.blog-aside { 
+    flex: 1; 
+    min-width: 250px; 
+    padding: 25px; 
+    background: var(--bg-white); 
+    border-radius: 12px; 
+    border: 1px solid var(--border-color); 
+    height: fit-content; 
+}
+
+.blog-post { 
+    margin-bottom: 30px; 
+    padding-bottom: 30px; 
+    border-bottom: 1px solid var(--border-color); 
+}
+
+.blog-post h3 { 
+    font-size: 1.4em; 
+    margin-bottom: 10px; 
+    color: #2c3e50; 
+}
+
+.blog-post .date { 
+    color: var(--text-light); 
+    font-size: 0.9em; 
+    margin-bottom: 15px; 
+    display: block; 
+}
+
+.blog-aside h3 { 
+    margin-bottom: 15px; 
+    color: #2c3e50; 
+    font-size: 1.2em; 
+    border-bottom: 2px solid #f4f6f7; 
+    padding-bottom: 10px; 
+}
+
+.blog-aside ul { list-style: none; }
+.blog-aside li { margin-bottom: 12px; }
+
+.blog-aside a { 
+    text-decoration: none; 
+    color: var(--primary-color); 
+    transition: var(--transition); 
+}
+
+.blog-aside a:hover { color: #2c3e50; }
+
+/* =========================================
+   9. FOOTER
+========================================= */
+footer { 
+    background: #2c3e50; 
+    color: #ecf0f1; 
+    text-align: center; 
+    padding: 40px 20px; 
+}
+
+footer a { 
+    color: var(--primary-color); 
+    text-decoration: none; 
+    margin: 0 10px; 
+    font-weight: bold; 
+}
+
+.back-to-top { 
+    display: inline-block; 
+    margin-top: 20px; 
+    padding: 10px 25px; 
+    background: #34495e; 
+    color: white; 
+    border-radius: 20px; 
+    transition: background 0.3s; 
+}
+
+.back-to-top:hover { 
+    background: var(--primary-color); 
+}
+
+/* =========================================
+   10. MEDIA QUERIES (Responsive)
+========================================= */
+@media (max-width: 768px) {
+    header { padding: 15px 20px; flex-direction: column; gap: 15px; }
+    nav ul { gap: 15px; flex-wrap: wrap; justify-content: center; }
+    .hero h1 { font-size: 2.2em; }
+    section { padding: 60px 5%; }
+    .blog-container { flex-direction: column; }
+}
